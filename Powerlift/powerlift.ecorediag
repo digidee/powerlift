@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_RULRoB7zEeO6w7DTGGEtTQ" type="EcoreTools" name="powerlift" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_cQwT8B7zEeO6w7DTGGEtTQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_cQywMB7zEeO6w7DTGGEtTQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_cQzXQB7zEeO6w7DTGGEtTQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_2kEPsB7zEeO6w7DTGGEtTQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="powerlift.ecore#//Exercise/ID"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_2kEPsR7zEeO6w7DTGGEtTQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_IlS0sB-dEeO6w7DTGGEtTQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="powerlift.ecore#//Exercise/Workout%20ID"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_IlS0sR-dEeO6w7DTGGEtTQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_fwflcB-cEeO6w7DTGGEtTQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="powerlift.ecore#//Exercise/Name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_fwflcR-cEeO6w7DTGGEtTQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_4si_IB7zEeO6w7DTGGEtTQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="powerlift.ecore#//Exercise/CurrentWeight"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_4si_IR7zEeO6w7DTGGEtTQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_cQzXQR7zEeO6w7DTGGEtTQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_cQzXQh7zEeO6w7DTGGEtTQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_cQzXQx7zEeO6w7DTGGEtTQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_cQz-UB7zEeO6w7DTGGEtTQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_cQz-UR7zEeO6w7DTGGEtTQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_cQz-Uh7zEeO6w7DTGGEtTQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_cQz-Ux7zEeO6w7DTGGEtTQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_cQwT8R7zEeO6w7DTGGEtTQ" fontColor="4210752" fontName="Cantarell" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="powerlift.ecore#//Exercise"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cQwT8h7zEeO6w7DTGGEtTQ" x="408" y="132"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_dg2C0B7zEeO6w7DTGGEtTQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_dg3Q8B7zEeO6w7DTGGEtTQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_dg3Q8R7zEeO6w7DTGGEtTQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_zaB8oB7zEeO6w7DTGGEtTQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="powerlift.ecore#//Workout_name/ID"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_zaB8oR7zEeO6w7DTGGEtTQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_0_5HMB7zEeO6w7DTGGEtTQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="powerlift.ecore#//Workout_name/Name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_0_5HMR7zEeO6w7DTGGEtTQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_dg3Q8h7zEeO6w7DTGGEtTQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_dg3Q8x7zEeO6w7DTGGEtTQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_dg3Q9B7zEeO6w7DTGGEtTQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_dg34AB7zEeO6w7DTGGEtTQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_dg34AR7zEeO6w7DTGGEtTQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_dg34Ah7zEeO6w7DTGGEtTQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_dg34Ax7zEeO6w7DTGGEtTQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_dg2C0R7zEeO6w7DTGGEtTQ" fontColor="4210752" fontName="Cantarell" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="powerlift.ecore#//Workout_name"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dg2C0h7zEeO6w7DTGGEtTQ" x="804" y="156"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_hZtKwB7zEeO6w7DTGGEtTQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_hZtx0B7zEeO6w7DTGGEtTQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_hZuY4B7zEeO6w7DTGGEtTQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_nZxPwB7zEeO6w7DTGGEtTQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="powerlift.ecore#//Weight/ID"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_nZxPwR7zEeO6w7DTGGEtTQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_q5-AEB7zEeO6w7DTGGEtTQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="powerlift.ecore#//Weight/Exercise%20ID"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_q5-AER7zEeO6w7DTGGEtTQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_tKAkQB-cEeO6w7DTGGEtTQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="powerlift.ecore#//Weight/Weight"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_tKBLUB-cEeO6w7DTGGEtTQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_2hX8QB-cEeO6w7DTGGEtTQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="powerlift.ecore#//Weight/Date"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_2hX8QR-cEeO6w7DTGGEtTQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="__XKRMB-cEeO6w7DTGGEtTQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="powerlift.ecore#//Weight/Acommplished"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__XKRMR-cEeO6w7DTGGEtTQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_hZuY4R7zEeO6w7DTGGEtTQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_hZuY4h7zEeO6w7DTGGEtTQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_hZuY4x7zEeO6w7DTGGEtTQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_hZuY5B7zEeO6w7DTGGEtTQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_hZuY5R7zEeO6w7DTGGEtTQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_hZuY5h7zEeO6w7DTGGEtTQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_hZuY5x7zEeO6w7DTGGEtTQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_hZtKwR7zEeO6w7DTGGEtTQ" fontColor="4210752" fontName="Cantarell" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="powerlift.ecore#//Weight"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hZtKwh7zEeO6w7DTGGEtTQ" x="24" y="84"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_RULRoR7zEeO6w7DTGGEtTQ"/>
+  <element xmi:type="ecore:EPackage" href="powerlift.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_snqCMB75EeO6w7DTGGEtTQ" type="3002" source="_dg2C0B7zEeO6w7DTGGEtTQ" target="_cQwT8B7zEeO6w7DTGGEtTQ">
+    <children xmi:type="notation:Node" xmi:id="_snqpQB75EeO6w7DTGGEtTQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_snqpQR75EeO6w7DTGGEtTQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_snqpQh75EeO6w7DTGGEtTQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_snqpQx75EeO6w7DTGGEtTQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_snqCMR75EeO6w7DTGGEtTQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_snqCMh75EeO6w7DTGGEtTQ" fontColor="4210752" fontName="Cantarell" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="powerlift.ecore#//Workout_name/Workout_name"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_snqCMx75EeO6w7DTGGEtTQ" points="[-11, 3, 247, 1]$[-256, -31, 2, -33]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_snuToB75EeO6w7DTGGEtTQ" id="(0.0967741935483871,0.10810810810810811)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_snuToR75EeO6w7DTGGEtTQ" id="(0.8956043956043956,0.30357142857142855)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_KwVI4B-dEeO6w7DTGGEtTQ" type="3002" source="_cQwT8B7zEeO6w7DTGGEtTQ" target="_hZtKwB7zEeO6w7DTGGEtTQ">
+    <children xmi:type="notation:Node" xmi:id="_KwVv8B-dEeO6w7DTGGEtTQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KwVv8R-dEeO6w7DTGGEtTQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_KwVv8h-dEeO6w7DTGGEtTQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KwVv8x-dEeO6w7DTGGEtTQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_KwVI4R-dEeO6w7DTGGEtTQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_KwVI4h-dEeO6w7DTGGEtTQ" fontColor="4210752" fontName="Cantarell" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="powerlift.ecore#//Exercise/Weight"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KwVI4x-dEeO6w7DTGGEtTQ" points="[-25, 2, 222, -17]$[-245, -36, 2, -55]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KwZaUB-dEeO6w7DTGGEtTQ" id="(0.15476190476190477,0.008928571428571428)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KwZaUR-dEeO6w7DTGGEtTQ" id="(0.8817204301075269,0.42748091603053434)"/>
+  </edges>
+</notation:Diagram>
