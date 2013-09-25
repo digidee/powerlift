@@ -17,22 +17,53 @@
         android:text="@string/workout_m"
         android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/li_button_a"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_a" />
+        android:layout_marginTop="23dp"
+        android:text="@string/app_intro"
+        android:textSize="15sp" />
 
-    <Button
-        android:id="@+id/li_button_b"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_b" />
+        android:layout_marginTop="10dp"
+        android:text="@string/app_intro2"
+        android:textSize="15sp" />
 
-    <ListView
-        android:id="@android:id/list"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/app_intro3"
+        android:textSize="15sp" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/li_button_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_a" />
+
+        <Button
+            android:id="@+id/li_button_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_b" />
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
 
 </LinearLayout>

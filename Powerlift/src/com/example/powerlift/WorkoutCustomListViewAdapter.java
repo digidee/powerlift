@@ -8,7 +8,8 @@ import java.util.List;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
-import android.text.Editable;
+import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +18,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class WorkoutCustomListViewAdapter extends ArrayAdapter<ExerciseName> {
 
@@ -29,18 +32,12 @@ public class WorkoutCustomListViewAdapter extends ArrayAdapter<ExerciseName> {
 	private List<Exercise> evalues;
 	ViewHolder holder = null;
 	ExerciseName rowItem;
-	Exercise 	eItem;
+	Exercise eItem;
 	long wid;
+
 	private static final double increment = 2.5;
 
 	private static final String EXE_TAG = "Workout Register";
-	
-	
-	
-	
-
-	
-	
 
 	public WorkoutCustomListViewAdapter(Context context, int resourceId,
 			List<ExerciseName> items, long wid) {
@@ -55,6 +52,7 @@ public class WorkoutCustomListViewAdapter extends ArrayAdapter<ExerciseName> {
 		TextView li_exercise_weight;
 		Button li_button;
 		CheckBox li_checkbox;
+		LinearLayout ll;
 	}
 
 	public View getView(final int position, View convertView, ViewGroup parent) {
@@ -63,14 +61,14 @@ public class WorkoutCustomListViewAdapter extends ArrayAdapter<ExerciseName> {
 
 		exnds = new ExerciseNameDataSource(context);
 		exnds.open();
-		
+
 		// rowItem = getItem(position);
 		evalues = exeds.getAllExercises();
 		if (!evalues.isEmpty())
 			eItem = evalues.get(position);
 
 		// rowItem = getItem(position);
-		values = exnds.getAllExerciseNames();
+		values = exnds.getAllExerciseNamesWithID(wid);
 		if (!values.isEmpty())
 			rowItem = values.get(position);
 
@@ -91,14 +89,26 @@ public class WorkoutCustomListViewAdapter extends ArrayAdapter<ExerciseName> {
 			holder.li_button = (Button) convertView
 					.findViewById(R.id.li_button);
 
+			holder.ll = (LinearLayout) convertView
+					.findViewById(R.id.li_ll_header);
+
 			convertView.setTag(holder);
 		} else
 			holder = (ViewHolder) convertView.getTag();
 
 		holder.li_exercise_name.setText("" + rowItem.getName());
-		holder.li_exercise_weight.setText("" + rowItem.getWeight());
+		holder.li_exercise_weight.setText(rowItem.getWeight() + "kg");
 
 		holder.li_checkbox.setChecked(rowItem.getAccomplished());
+
+//		holder.ll.setOnClickListener(new OnClickListener() {
+//
+//			@Override
+//			public void onClick(View v) {
+//				Toast.makeText(context, "cliick", Toast.LENGTH_SHORT).show();
+//
+//			}
+//		});
 
 		holder.li_button.setOnClickListener(new OnClickListener() {
 
@@ -117,8 +127,9 @@ public class WorkoutCustomListViewAdapter extends ArrayAdapter<ExerciseName> {
 				String date = dateFormat.format(cal.getTime());
 
 				Log.d(EXE_TAG, "Clicked button position: " + position);
-				
-				Log.d(EXE_TAG, "Accomplished: " + values.get(position).getAccomplished());
+
+				Log.d(EXE_TAG, "Accomplished: "
+						+ values.get(position).getAccomplished());
 
 				ContentValues data = new ContentValues();
 
@@ -127,8 +138,9 @@ public class WorkoutCustomListViewAdapter extends ArrayAdapter<ExerciseName> {
 
 				exnds.updateExercise(data, values.get(position).getID());
 
-				exeds.createExercise(values.get(position).getWID(), values.get(position).getID(),
-						values.get(position).getWeight() + increment, date,
+				exeds.createExercise(values.get(position).getWID(),
+						values.get(position).getID(), values.get(position)
+								.getWeight(), date,
 						values.get(position).getName(), true);
 
 				Log.d(EXE_TAG, "new value: " + values.toString());
@@ -142,6 +154,5 @@ public class WorkoutCustomListViewAdapter extends ArrayAdapter<ExerciseName> {
 
 		return convertView;
 	}
-
 
 }

@@ -59,8 +59,8 @@ public class ExerciseNameDataSource {
 		return exe;
 	}
 
-	public void deleteExercise(ExerciseName exe) {
-		long id = exe.getID();
+	public void deleteExercise(long id) {
+
 
 		database.delete(MySQLiteHelper.TABLE_EXERCISE_NAME,
 				MySQLiteHelper.COLUMN_EXERCISE_NAME_ID + " = " + id, null);
@@ -101,7 +101,7 @@ public class ExerciseNameDataSource {
 		List<ExerciseName> exes = new ArrayList<ExerciseName>();
 
 		Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISE_NAME,
-				allColumns, "_id="+id, null, null, null, null);
+				allColumns, "wid="+id+" or wid=0", null, null, null, null);
 
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {

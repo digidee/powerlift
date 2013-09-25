@@ -7,7 +7,6 @@ import java.util.List;
 
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.text.Editable;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -18,6 +17,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
@@ -35,12 +35,15 @@ public class NewExerciseDialogFragment extends DialogFragment implements
 	private AutoCompleteTextView ename;
 
 	private Button regButton, delButton;
+	private CheckBox addAll;
 
 	private static final String EXE_TAG = "new_exercise_dialog";
 
 	private static final String[] COUNTRIES = new String[] { "Squat",
 			"Pendlay Rows", "Overhead Press", "Bench Press", "Deadlift",
 			"Biceps Curls" };
+
+	private int currentPage;
 
 	public interface EditNameDialogListener {
 		void onFinishEditDialog(String inputText);
@@ -54,6 +57,8 @@ public class NewExerciseDialogFragment extends DialogFragment implements
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.new_exercise_dialog, container);
+
+		currentPage = getArguments().getInt("currentPage");
 
 		exeds = new ExerciseDataSource(getActivity());
 		exeds.open();
@@ -72,6 +77,7 @@ public class NewExerciseDialogFragment extends DialogFragment implements
 		weight = (EditText) view.findViewById(R.id.ET_start_weight);
 		regButton = (Button) view.findViewById(R.id.button_register);
 		delButton = (Button) view.findViewById(R.id.button_delete);
+		addAll = (CheckBox) view.findViewById(R.id.CB_add_all);
 
 		getDialog().setTitle("New Exercise");
 
@@ -153,13 +159,21 @@ public class NewExerciseDialogFragment extends DialogFragment implements
 			}
 		}
 
-		exe = exeds.createExercise(wid, nid, Integer.parseInt(weight.getText()
+		if (addAll.isChecked()) {
+			wid = 0;
+			currentPage = 0;
+		}
+
+		exe = exeds.createExercise(wid, nid, Double.parseDouble(weight.getText()
 				.toString()), date, ename.getText().toString(), false);
 
-		if (createe)
-			exn = exnds.createExerciseName(ename.getText().toString(), 1,
-					Integer.parseInt(weight.getText().toString()), false);
+		if (createe) {
+			exn = exnds.createExerciseName(ename.getText().toString(),
+					currentPage, Double.parseDouble(weight.getText().toString()),
+					false);
 
+			((MainSlider) getActivity()).updateAdapter();
+		}
 		if (createw)
 			wo = wods.createWorkout(wname.getText().toString());
 

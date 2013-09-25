@@ -9,80 +9,85 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".WorkoutRegister" >
 
-    
-    <LinearLayout 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:visibility="gone"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone" >
 
- >
+        <TextView
+            android:id="@+id/heading_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:text="@string/workout_r"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/ET_exercise_name"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:hint="@string/exercise_name"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/ET_workout_id"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:hint="@string/workout_id"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/ET_start_weight"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:hint="@string/start_weight"
+            android:inputType="numberSigned"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10sp" >
+
+            <CheckBox
+                android:id="@+id/CB_set_accomplished"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="registerExercise"
+                android:text="@string/button_register" />
+
+            <Button
+                android:id="@+id/button_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_delete" />
+        </LinearLayout>
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/heading_register"
+        android:id="@+id/heading_workout_log"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
-        android:text="@string/workout_r"
+        android:text="@string/exercise_log"
         android:textSize="30sp" />
 
-    <EditText
-        android:id="@+id/ET_exercise_name"
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10sp"
-        android:hint="@string/exercise_name"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:textSize="14sp" />
-
-    <EditText
-        android:id="@+id/ET_workout_id"
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10sp"
-        android:hint="@string/workout_id"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:textSize="14sp" />
-
-    <EditText
-        android:id="@+id/ET_start_weight"
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10sp"
-        android:hint="@string/start_weight"
-        android:inputType="numberSigned"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:textSize="14sp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="10sp" >
-
-        <CheckBox
-            android:id="@+id/CB_set_accomplished"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/button_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="registerExercise"
-            android:text="@string/button_register" />
-
-        <Button
-            android:id="@+id/button_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_delete" />
-    </LinearLayout>
-
-        </LinearLayout>
-    
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"

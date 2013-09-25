@@ -104,7 +104,7 @@ public class ExerciseDataSource {
 		List<Exercise> exes = new ArrayList<Exercise>();
 
 		Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISE,
-				allColumns, "_wid="+id, null, null, null, null);
+				allColumns, "_wid="+id+" or _wid=0", null, null, null, null);
 
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {
@@ -116,6 +116,9 @@ public class ExerciseDataSource {
 		cursor.close();
 		return exes;
 	}
+	
+	
+
 	
 	
 	public List<Exercise> getAllExercisesWithNID(long id) {

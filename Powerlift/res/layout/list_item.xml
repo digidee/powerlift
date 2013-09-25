@@ -17,21 +17,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5sp"
-        android:textSize="12sp" />
-    
-        <TextView
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
         android:id="@+id/li_exercise_name_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5sp"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/li_e_workout_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5sp"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/li_exercise_date"
@@ -52,9 +55,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5sp"
-        android:textSize="12sp" />
-    
-        <TextView
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
         android:id="@+id/li_exercise_name_id2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,6 +71,5 @@
         android:layout_height="wrap_content"
         android:padding="5sp"
         android:textSize="12sp" />
-    
 
 </LinearLayout>

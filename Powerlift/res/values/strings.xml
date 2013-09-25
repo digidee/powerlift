@@ -5,10 +5,11 @@
     <string name="action_settings">Settings</string>
 
     <!-- Headings -->
-    <string name="workout_a">Workout A</string>
-    <string name="workout_b">Workout B</string>
-    <string name="workout_m">Workout Main</string>
-    <string name="workout_r">Workout Register</string>
+    <string name="workout_a"><u>Workout A</u></string>
+    <string name="workout_b"><u>Workout B</u></string>
+    <string name="workout_m"><u>Workout Main</u></string>
+    <string name="workout_r"><u>Workout Register</u></string>
+    <string name="exercise_log"><u>Exercise Log</u></string>
 
     <!-- Exercises -->
     <string name="squat">Squat</string>
@@ -16,7 +17,7 @@
     <string name="rows">Rows</string>
     <string name="deadlift">Deadlift</string>
     <string name="overhead_press">Overhead Press</string>
-    <string name="button_done">Done exercise!</string>
+    <string name="button_done">Done!</string>
 
     <!-- Register -->
     <string name="exercise_name">Exercise Name</string>
@@ -30,10 +31,31 @@
     <!-- Main -->
     <string name="button_a">Show Workout A</string>
     <string name="button_b">Show Workout B</string>
+    <string name="app_intro">Powerlift is an app based on the 5x5 Stronglift training program.</string>
+    <string name="app_intro2">Swiping to the right will show the Workout 1 and then Workout 2 if you swipe again. You can add new exercises to your program in Workout 1 and 2 by clicking \'Add Exercise\'. </string>
+    <string name="app_intro3"> When finished with an exercise just click on \'Done!\'. This will register your progress and increment the intensity of your exercise by 2.5 kg for your next workout.</string>
 
     <!-- Menu -->
     <string name="new_exercise">New Exercise</string>
     <string name="new_close">Close</string>
     <string name="new_reset">Reset</string>
+
+    <!-- Workout A -->
+    <string name="button_add_exe">Add New Exercise</string>
+
+    <!-- New Exercise Dialog -->
+    <string name="add_all">Add to all workouts</string>
+
+    <!-- Exercise Info Dialog -->
+    <string name="current_weight">Weight</string>
+    <string name="unit">Kg</string>
+    <string name="last_date">Date</string>
+    <string name="bogus_date">03.08.2013 - 14:53:05</string>
+    <string name="button_update">Update</string>
+    <string name="button_delete_exe">Delete</string>
+    <string name="sets_reps">Sets X Reps</string>
+    <string name="sets_reps_x">5 X 5</string>
+    <string name="increment">Increment</string>
+    <string name="increment_x">2.5</string>
 
 </resources>

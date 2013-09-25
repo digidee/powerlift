@@ -2,6 +2,7 @@ package com.example.powerlift;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,9 +12,10 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.powerlift.NewExerciseDialogFragment.EditNameDialogListener;
+import com.viewpagerindicator.CirclePageIndicator;
+import com.viewpagerindicator.TitlePageIndicator;
 
 public class MainSlider extends FragmentActivity implements
 		EditNameDialogListener {
@@ -21,10 +23,12 @@ public class MainSlider extends FragmentActivity implements
 	// Declare ViewPager & Adapter variables.
 	private MyAdapter mAdapter;
 	private ViewPager mPager;
-	int position;
+
 	private ExerciseDataSource exeds;
+	private ExerciseNameDataSource exnds;
+	private WorkoutDataSource wods;
 	private static final String EXE_TAG = "MainSlider";
-	private int currentItem;
+	private int currentItem, position, currentPage;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -39,11 +43,18 @@ public class MainSlider extends FragmentActivity implements
 		mPager = (ViewPager) findViewById(R.id.pager);
 		mPager.setAdapter(mAdapter);
 
-		mPager.setCurrentItem(2);
+		// Bind the title indicator to the adapter
+		CirclePageIndicator circle = (CirclePageIndicator) findViewById(R.id.indicator);
+		circle.setStrokeColor(Color.BLACK);
+		circle.setViewPager(mPager);
+
+		mPager.setCurrentItem(1);
 
 	}
 
 	public static class MyAdapter extends FragmentPagerAdapter {
+
+		int pos;
 
 		public MyAdapter(FragmentManager fm) {
 			super(fm);
@@ -51,24 +62,33 @@ public class MainSlider extends FragmentActivity implements
 
 		@Override
 		public int getCount() {
-			return 6;
+			return 4;
 		}
 
 		@Override
 		public Fragment getItem(int position) {
+
+			WorkoutA wa = new WorkoutA();
+			Bundle arguments = new Bundle();
+			arguments.putInt("wid", position);
+			wa.setArguments(arguments);
+
+			Log.d("info", "wid: " + position);
+
 			switch (position) {
+
 			case 0:
-				return new ExerciseNameList();
-			case 1:
-				return new WorkoutList();
-			case 2:
-				return new WorkoutRegister();
-			case 3:
 				return new WorkoutMain();
-			case 4:
-				return new WorkoutA();
-			case 5:
-				return new WorkoutB();
+			case 1:
+				return wa;
+			case 2:
+				return wa;
+//			case 3:
+//				return new ExerciseNameList();
+//			case 4:
+//				return new WorkoutList();
+			case 3:
+				return new WorkoutRegister();
 
 			default:
 				return null;
@@ -112,10 +132,10 @@ public class MainSlider extends FragmentActivity implements
 
 		switch (item.getItemId()) {
 
-		case R.id.menu_new_exercise:
-			currentItem = mPager.getCurrentItem();
-			startNewExerciseDialog();
-			return true;
+//		case R.id.menu_new_exercise:
+//			currentItem = mPager.getCurrentItem();
+//			startNewExerciseDialog();
+//			return true;
 
 		case R.id.menu_reset:
 
@@ -133,31 +153,46 @@ public class MainSlider extends FragmentActivity implements
 	public void startNewExerciseDialog() {
 		currentItem = mPager.getCurrentItem();
 		FragmentManager manager = getSupportFragmentManager();
-
-		/** Instantiating the DialogFragment class */
-		NewExerciseDialogFragment alert = new NewExerciseDialogFragment();
-
-		/** Creating a bundle object to store the selected item's index */
+		NewExerciseDialogFragment newexe = new NewExerciseDialogFragment();
 		Bundle b = new Bundle();
-
-		/** Storing the selected item's index in the bundle object */
 		b.putInt("position", position);
+		b.putInt("currentPage", mPager.getCurrentItem());
+		newexe.setArguments(b);
+		newexe.show(manager, "new_exercise");
+	}
 
-		/** Setting the bundle object to the dialog fragment object */
-		alert.setArguments(b);
-
-		/**
-		 * Creating the dialog fragment object, which will in turn open the
-		 * alert dialog window
-		 */
-		alert.show(manager, "new_exercise");
+	public void startExerciseDialog(int id) {
+		currentItem = mPager.getCurrentItem();
+		FragmentManager manager = getSupportFragmentManager();
+		ExerciseInfoDialogFragment exeinfo = new ExerciseInfoDialogFragment();
+		Bundle b = new Bundle();
+		b.putInt("id", id);
+		b.putInt("currentPage", mPager.getCurrentItem());
+		exeinfo.setArguments(b);
+		exeinfo.show(manager, "exercise_info");
 	}
 
 	public void deleteEcercises() {
 		exeds.open();
+
+		exnds = new ExerciseNameDataSource(this);
+		wods = new WorkoutDataSource(this);
+
+		exnds.open();
+		wods.open();
+
+		exnds.deleteAllExercises();
+		exnds.resetIDExercises();
+
+		wods.deleteAllExercises();
+		wods.resetIDExercises();
+
 		exeds.deleteAllExercises();
 		exeds.resetIDExercises();
+
 		exeds.close();
+		exnds.close();
+		wods.close();
 
 		mPager.setAdapter(mAdapter);
 		mPager.setCurrentItem(currentItem);
@@ -169,9 +204,14 @@ public class MainSlider extends FragmentActivity implements
 	public void onFinishEditDialog(String inputText) {
 		Log.d(EXE_TAG, "Called:	onFinishEditDialog");
 
+		// mPager.setAdapter(mAdapter);
+		// mPager.setCurrentItem(currentItem);
+
+	}
+
+	public void updateAdapter() {
 		mPager.setAdapter(mAdapter);
 		mPager.setCurrentItem(currentItem);
-
 	}
 
 }
