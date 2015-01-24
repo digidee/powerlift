@@ -84,6 +84,7 @@ public class NewExerciseDialogFragment extends DialogFragment implements
 		regButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				registerExercise();
+				dismissDialog();
 			}
 		});
 

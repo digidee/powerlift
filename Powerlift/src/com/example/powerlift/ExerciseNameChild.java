@@ -1,16 +1,13 @@
 package com.example.powerlift;
 
-import java.util.ArrayList;
-
-public class ExerciseName {
+public class ExerciseNameChild {
 
 	private long id, wid;
-	private String name;
-	private double weight;
+	private int sets, reps;
+	private String name, date;
+	private double weight, increment;
 	private boolean accomplished;
 
-	// ArrayList to store child objects
-    private ArrayList<ExerciseNameChild> children;
 
 	public long getID() {
 		return id;
@@ -18,6 +15,38 @@ public class ExerciseName {
 
 	public void setID(long id) {
 		this.id = id;
+	}
+	
+	public int getSets() {
+		return sets;
+	}
+
+	public void setSets(int sets) {
+		this.sets = sets;
+	}
+	
+	public int getReps() {
+		return reps;
+	}
+
+	public void setReps(int reps) {
+		this.reps = reps;
+	}
+	
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+	
+	public double getIncrement() {
+		return increment;
+	}
+
+	public void setIncrement(int increment) {
+		this.increment = increment;
 	}
 
 	public String getName() {
@@ -57,18 +86,5 @@ public class ExerciseName {
 	public String toString() {
 		return name;
 	}
-	
-	
-    // ArrayList to store child objects
-    public ArrayList<ExerciseNameChild> getChildren()
-    {
-        return children;
-    }
-     
-    public void setChildren(ArrayList<ExerciseNameChild> children)
-    {
-        this.children = children;
-    }
-	
 
 }

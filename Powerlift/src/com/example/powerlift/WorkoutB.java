@@ -1,57 +1,70 @@
 package com.example.powerlift;
 
-import java.util.List;
-
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
-import android.text.SpannableString;
-import android.text.style.UnderlineSpan;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 
-public class WorkoutB extends ListFragment {
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GraphView.GraphViewData;
+import com.jjoe64.graphview.GraphView.LegendAlign;
+import com.jjoe64.graphview.GraphViewSeries;
+import com.jjoe64.graphview.GraphViewSeries.GraphViewSeriesStyle;
+import com.jjoe64.graphview.LineGraphView;
 
-	private ExerciseNameDataSource exeds;
-	WorkoutCustomListViewAdapter adapter;
-	List<ExerciseName> values;
-	long wid = 2;
-	TextView tv;
-	private Button button_add_exe;
+public class WorkoutB extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.workout_a,
+		ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.workout_b,
 				container, false);
 
-		tv = (TextView) rootView.findViewById(R.id.workout_a);
-		tv.setText(getResources().getString(R.string.workout_b));
-		SpannableString content = new SpannableString(tv.getText().toString());
-		content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-		tv.setText(content);
+		GraphViewData[] gd = new GraphViewData[] { 
+				new GraphViewData(1, 40),
+				new GraphViewData(2, 42.5d), 
+				new GraphViewData(3, 45),
+				new GraphViewData(4, 47.5d) 
+				};
 
-		exeds = new ExerciseNameDataSource(getActivity());
-		exeds.open();
+		GraphViewData[] gd2 = new GraphViewData[] { 
+				new GraphViewData(1, 50),
+				new GraphViewData(2, 52.5d), 
+				new GraphViewData(3, 55),
+				new GraphViewData(4, 57.5d) 
+				};
 
-		values = exeds.getAllExerciseNamesWithID(wid);
+		// init example series data
+		GraphViewSeries exampleSeries = new GraphViewSeries("Squat",
+				new GraphViewSeriesStyle(Color.RED, 3), gd);
 
-		adapter = new WorkoutCustomListViewAdapter(getActivity(),
-				R.layout.list_item, values, wid);
-		setListAdapter(adapter);
+		GraphViewSeries exampleSeries2 = new GraphViewSeries("Deadlift",
+				new GraphViewSeriesStyle(Color.BLUE, 3), gd2);
 
-		button_add_exe = (Button) rootView.findViewById(R.id.button_add_exe);
+		GraphView graphView = new LineGraphView(getActivity() // context
+				, "Exercise Progress" // heading
+		);
 
-		button_add_exe.setOnClickListener(new OnClickListener() {
+//		graphView.setHorizontalLabels(new String[] { "2 days ago", "yesterday",
+//				"today", "tomorrow" });
+//		graphView.setVerticalLabels(new String[] { "high", "middle", "low" });
 
-			@Override
-			public void onClick(View v) {
-				((MainSlider) getActivity()).startNewExerciseDialog();
-			}
-		});
+		graphView.setShowLegend(true);
+		graphView.setLegendAlign(LegendAlign.BOTTOM);
+		graphView.setLegendWidth(200);
+
+		graphView.addSeries(exampleSeries); // data
+		graphView.addSeries(exampleSeries2); // data
+		
+
+		LinearLayout layout = (LinearLayout) rootView.findViewById(R.id.graph1);
+		LinearLayout layout2 = (LinearLayout) rootView
+				.findViewById(R.id.graph2);
+		layout.addView(graphView);
+
 
 		return rootView;
 	}

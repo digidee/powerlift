@@ -3,14 +3,15 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:showAsAction="never"
+        android:showAsAction="ifRoom|withText"
         android:title="@string/action_settings"/>
     <item
         android:id="@+id/menu_new_exercise"
+        android:showAsAction="ifRoom|withText"
         android:title="@string/new_exercise"/>
-    
-        <item
+    <item
         android:id="@+id/menu_reset"
+        android:showAsAction="ifRoom|withText"
         android:title="@string/new_reset"/>
 
 </menu>

@@ -8,19 +8,19 @@ import java.util.List;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
-import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class WorkoutCustomListViewAdapter extends ArrayAdapter<ExerciseName> {
 
@@ -53,6 +53,7 @@ public class WorkoutCustomListViewAdapter extends ArrayAdapter<ExerciseName> {
 		Button li_button;
 		CheckBox li_checkbox;
 		LinearLayout ll;
+
 	}
 
 	public View getView(final int position, View convertView, ViewGroup parent) {
@@ -101,15 +102,6 @@ public class WorkoutCustomListViewAdapter extends ArrayAdapter<ExerciseName> {
 
 		holder.li_checkbox.setChecked(rowItem.getAccomplished());
 
-//		holder.ll.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				Toast.makeText(context, "cliick", Toast.LENGTH_SHORT).show();
-//
-//			}
-//		});
-
 		holder.li_button.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -140,8 +132,8 @@ public class WorkoutCustomListViewAdapter extends ArrayAdapter<ExerciseName> {
 
 				exeds.createExercise(values.get(position).getWID(),
 						values.get(position).getID(), values.get(position)
-								.getWeight(), date,
-						values.get(position).getName(), true);
+								.getWeight(), date, values.get(position)
+								.getName(), true);
 
 				Log.d(EXE_TAG, "new value: " + values.toString());
 				notifyDataSetChanged();

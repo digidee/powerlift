@@ -1,5 +1,6 @@
 package com.example.powerlift;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
@@ -15,7 +16,6 @@ import android.view.MenuItem;
 
 import com.example.powerlift.NewExerciseDialogFragment.EditNameDialogListener;
 import com.viewpagerindicator.CirclePageIndicator;
-import com.viewpagerindicator.TitlePageIndicator;
 
 public class MainSlider extends FragmentActivity implements
 		EditNameDialogListener {
@@ -24,6 +24,7 @@ public class MainSlider extends FragmentActivity implements
 	private MyAdapter mAdapter;
 	private ViewPager mPager;
 
+	private ActionBar actionBar;
 	private ExerciseDataSource exeds;
 	private ExerciseNameDataSource exnds;
 	private WorkoutDataSource wods;
@@ -62,7 +63,7 @@ public class MainSlider extends FragmentActivity implements
 
 		@Override
 		public int getCount() {
-			return 4;
+			return 5;
 		}
 
 		@Override
@@ -78,16 +79,21 @@ public class MainSlider extends FragmentActivity implements
 			switch (position) {
 
 			case 0:
+
 				return new WorkoutMain();
 			case 1:
+
 				return wa;
 			case 2:
+
 				return wa;
-//			case 3:
-//				return new ExerciseNameList();
-//			case 4:
-//				return new WorkoutList();
 			case 3:
+
+				return new WorkoutB();
+				// case 4:
+				// return new WorkoutList();
+			case 4:
+
 				return new WorkoutRegister();
 
 			default:
@@ -132,10 +138,10 @@ public class MainSlider extends FragmentActivity implements
 
 		switch (item.getItemId()) {
 
-//		case R.id.menu_new_exercise:
-//			currentItem = mPager.getCurrentItem();
-//			startNewExerciseDialog();
-//			return true;
+		case R.id.menu_new_exercise:
+			startNewExerciseDialog();
+
+			return true;
 
 		case R.id.menu_reset:
 

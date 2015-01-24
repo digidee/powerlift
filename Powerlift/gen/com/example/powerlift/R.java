@@ -8,6 +8,9 @@
 package com.example.powerlift;
 
 public final class R {
+    public static final class array {
+        public static final int planets_array=0x7f0b0000;
+    }
     public static final class attr {
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -348,79 +351,81 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int default_title_indicator_top_padding=0x7f08000c;
     }
     public static final class drawable {
-        public static final int btn_default_disabled_focused_holo_light=0x7f020000;
-        public static final int btn_default_disabled_holo_light=0x7f020001;
-        public static final int btn_default_focused_holo_light=0x7f020002;
-        public static final int btn_default_holo_light=0x7f020003;
-        public static final int btn_default_normal_holo_light=0x7f020004;
-        public static final int btn_default_pressed_holo_light=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int vpi__tab_indicator=0x7f020007;
-        public static final int vpi__tab_selected_focused_holo=0x7f020008;
-        public static final int vpi__tab_selected_holo=0x7f020009;
-        public static final int vpi__tab_selected_pressed_holo=0x7f02000a;
-        public static final int vpi__tab_unselected_focused_holo=0x7f02000b;
-        public static final int vpi__tab_unselected_holo=0x7f02000c;
-        public static final int vpi__tab_unselected_pressed_holo=0x7f02000d;
+        public static final int ic_launcher=0x7f020000;
+        public static final int lifter=0x7f020001;
+        public static final int vpi__tab_indicator=0x7f020002;
+        public static final int vpi__tab_selected_focused_holo=0x7f020003;
+        public static final int vpi__tab_selected_holo=0x7f020004;
+        public static final int vpi__tab_selected_pressed_holo=0x7f020005;
+        public static final int vpi__tab_unselected_focused_holo=0x7f020006;
+        public static final int vpi__tab_unselected_holo=0x7f020007;
+        public static final int vpi__tab_unselected_pressed_holo=0x7f020008;
     }
     public static final class id {
-        public static final int CB_add_all=0x7f040023;
-        public static final int CB_set_accomplished=0x7f040034;
-        public static final int ET_current_weight=0x7f040009;
-        public static final int ET_exercise_name=0x7f040032;
-        public static final int ET_exercise_name_ac=0x7f040020;
-        public static final int ET_start_weight=0x7f040022;
-        public static final int ET_workout_id=0x7f040033;
-        public static final int ET_workout_name=0x7f040021;
-        public static final int TV_current_weight=0x7f040005;
-        public static final int TV_current_weight_unit=0x7f04000a;
-        public static final int TV_increment=0x7f040007;
-        public static final int TV_increment_x=0x7f04000c;
-        public static final int TV_last_date=0x7f04000b;
-        public static final int TV_last_date_label=0x7f040006;
-        public static final int TV_sets_reps=0x7f040008;
-        public static final int TV_sets_reps_x=0x7f04000d;
-        public static final int action_settings=0x7f040036;
+        public static final int CB_add_all=0x7f040024;
+        public static final int CB_set_accomplished=0x7f04003b;
+        public static final int ET_current_weight=0x7f04000a;
+        public static final int ET_exercise_name=0x7f040039;
+        public static final int ET_exercise_name_ac=0x7f040021;
+        public static final int ET_start_weight=0x7f040023;
+        public static final int ET_workout_id=0x7f04003a;
+        public static final int ET_workout_name=0x7f040022;
+        public static final int TV_current_weight=0x7f040006;
+        public static final int TV_current_weight_unit=0x7f04000b;
+        public static final int TV_increment=0x7f040008;
+        public static final int TV_increment_x=0x7f04000d;
+        public static final int TV_last_date=0x7f04000c;
+        public static final int TV_last_date_label=0x7f040007;
+        public static final int TV_sets_reps=0x7f040009;
+        public static final int TV_sets_reps_x=0x7f04000e;
+        public static final int action_settings=0x7f04003d;
         public static final int bottom=0x7f040003;
-        public static final int button_add_exe=0x7f040029;
-        public static final int button_close=0x7f040010;
-        public static final int button_delete=0x7f04000f;
-        public static final int button_register=0x7f040024;
-        public static final int button_update=0x7f04000e;
-        public static final int group=0x7f040011;
-        public static final int heading_register=0x7f040031;
-        public static final int heading_workout_log=0x7f040035;
-        public static final int indicator=0x7f040026;
-        public static final int li_button=0x7f04002d;
-        public static final int li_button_a=0x7f04002f;
-        public static final int li_button_b=0x7f040030;
-        public static final int li_checkbox=0x7f04002c;
-        public static final int li_e_workout_id=0x7f040015;
-        public static final int li_exercise_accomplished=0x7f040018;
-        public static final int li_exercise_date=0x7f040016;
-        public static final int li_exercise_id=0x7f040013;
-        public static final int li_exercise_name=0x7f040012;
-        public static final int li_exercise_name_accomplished=0x7f04001d;
-        public static final int li_exercise_name_current_weight=0x7f04001c;
-        public static final int li_exercise_name_eid=0x7f04001b;
-        public static final int li_exercise_name_id=0x7f040014;
-        public static final int li_exercise_name_id2=0x7f040019;
-        public static final int li_exercise_name_name=0x7f04001a;
-        public static final int li_exercise_weight=0x7f040017;
-        public static final int li_ll_header=0x7f04002b;
-        public static final int li_workout_id=0x7f04001f;
-        public static final int li_workout_name=0x7f04001e;
-        public static final int mLlayoutBottomButtons=0x7f040027;
-        public static final int menu_new_exercise=0x7f040037;
-        public static final int menu_reset=0x7f040038;
+        public static final int button_add_exe=0x7f04002a;
+        public static final int button_close=0x7f040011;
+        public static final int button_delete=0x7f040010;
+        public static final int button_register=0x7f040025;
+        public static final int button_update=0x7f04000f;
+        public static final int graph1=0x7f04002b;
+        public static final int graph2=0x7f04002c;
+        public static final int group=0x7f040012;
+        public static final int heading_register=0x7f040038;
+        public static final int heading_workout_log=0x7f04003c;
+        public static final int indicator=0x7f040027;
+        public static final int li_button=0x7f040030;
+        public static final int li_button_a=0x7f040036;
+        public static final int li_button_b=0x7f040037;
+        public static final int li_checkbox=0x7f04002f;
+        public static final int li_date_in=0x7f040032;
+        public static final int li_e_workout_id=0x7f040016;
+        public static final int li_exercise_accomplished=0x7f040019;
+        public static final int li_exercise_date=0x7f040017;
+        public static final int li_exercise_id=0x7f040014;
+        public static final int li_exercise_name=0x7f040013;
+        public static final int li_exercise_name_accomplished=0x7f04001e;
+        public static final int li_exercise_name_current_weight=0x7f04001d;
+        public static final int li_exercise_name_eid=0x7f04001c;
+        public static final int li_exercise_name_id=0x7f040015;
+        public static final int li_exercise_name_id2=0x7f04001a;
+        public static final int li_exercise_name_name=0x7f04001b;
+        public static final int li_exercise_weight=0x7f040018;
+        public static final int li_increment_in=0x7f040033;
+        public static final int li_ll_header=0x7f04002e;
+        public static final int li_ll_header2=0x7f040031;
+        public static final int li_workout_id=0x7f040020;
+        public static final int li_workout_name=0x7f04001f;
+        public static final int mLlayoutBottomButtons=0x7f040028;
+        public static final int menu_new_exercise=0x7f04003e;
+        public static final int menu_reset=0x7f04003f;
         public static final int none=0x7f040000;
-        public static final int pager=0x7f040025;
-        public static final int textView1=0x7f04002a;
-        public static final int textView2=0x7f04002e;
+        public static final int pager=0x7f040026;
+        public static final int show_info=0x7f040005;
+        public static final int textView1=0x7f040034;
+        public static final int textView2=0x7f040035;
         public static final int top=0x7f040004;
         public static final int triangle=0x7f040001;
         public static final int underline=0x7f040002;
-        public static final int workout_a=0x7f040028;
+        public static final int wo_list=0x7f04002d;
+        public static final int workout_a=0x7f040029;
     }
     public static final class integer {
         public static final int default_circle_indicator_orientation=0x7f070000;
@@ -439,11 +444,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int workout_a=0x7f030006;
         public static final int workout_b=0x7f030007;
         public static final int workout_list=0x7f030008;
-        public static final int workout_m=0x7f030009;
-        public static final int workout_r=0x7f03000a;
+        public static final int workout_list_child=0x7f030009;
+        public static final int workout_m=0x7f03000a;
+        public static final int workout_r=0x7f03000b;
     }
     public static final class menu {
-        public static final int main=0x7f0b0000;
+        public static final int main=0x7f0c0000;
     }
     public static final class string {
         public static final int action_settings=0x7f0a0001;
@@ -504,17 +510,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int workout_r=0x7f0a0005;
     }
     public static final class style {
-        /** 
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
-         */
-        public static final int AppBaseTheme=0x7f090007;
-        public static final int AppTheme=0x7f090008;
-        public static final int ButtonAppTheme=0x7f090005;
-        public static final int ImageButtonAppTheme=0x7f090006;
         public static final int TextAppearance_TabPageIndicator=0x7f090003;
         public static final int Theme_PageIndicatorDefaults=0x7f090000;
         public static final int Widget=0x7f090001;

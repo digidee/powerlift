@@ -21,7 +21,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="23dp"
                 android:text="@string/workout_a"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:visibility="gone" />
 
             <ListView
                 android:id="@android:id/list"
@@ -38,15 +39,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:padding="20dp" >
+        android:padding="20dp"
+        android:visibility="gone" >
 
         <Button
             android:id="@+id/button_add_exe"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/button_add_exe" 
-            style="@drawable/btn_default_holo_light"
+            android:text="@string/button_add_exe" >
             />
+        </Button>
     </LinearLayout>
 
 </RelativeLayout>
